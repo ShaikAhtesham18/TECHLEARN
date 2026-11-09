@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechLearn - Professional Training Institute</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f7fc;
+    color: #222;
+}
+
+/* NAVBAR */
+header {
+    background: #101c36;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #00d4ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+/* HERO */
+.hero {
+    min-height: 520px;
+    padding: 100px 8%;
+    background: linear-gradient(120deg, #101c36, #174b83);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #00d4ff;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    color: #e2e9f5;
+}
+
+.btn {
+    display: inline-block;
+    background: #00c8ed;
+    color: #101c36;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    background: transparent;
+}
+
+/* COMMON SECTION */
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: #101c36;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* ABOUT */
+.about {
+    background: white;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.9;
+    color: #555;
+    font-size: 17px;
+}
+
+/* COURSES */
+.courses {
+    background: #f5f7fc;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.course-card {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+    border-top: 5px solid #00c8ed;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+}
+
+.course-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.course-card h3 {
+    font-size: 25px;
+    color: #101c36;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.course-card ul {
+    padding-left: 20px;
+    line-height: 2;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.course-card h4 {
+    color: #174b83;
+    margin-bottom: 10px;
+}
+
+.course-btn {
+    display: inline-block;
+    background: #101c36;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* MODES */
+.modes {
+    background: white;
+}
+
+.mode-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.mode-card {
+    padding: 35px;
+    text-align: center;
+    background: #f1f8ff;
+    border-radius: 12px;
+}
+
+.mode-card h3 {
+    font-size: 24px;
+    color: #174b83;
+    margin: 15px 0;
+}
+
+.mode-card p {
+    line-height: 1.8;
+    color: #555;
+}
+
+/* WHY CHOOSE US */
+.why-us {
+    background: #101c36;
+    color: white;
+}
+
+.why-us .section-title h2 {
+    color: white;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.feature {
+    background: #1c3154;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.feature h3 {
+    color: #00d4ff;
+    margin: 15px 0;
+}
+
+.feature p {
+    color: #d2dced;
+    line-height: 1.7;
+}
+
+/* CONTACT */
+.contact {
+    background: #f5f7fc;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.contact-info, .enquiry {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.contact-info h3, .enquiry h3 {
+    color: #101c36;
+    margin-bottom: 22px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.enquiry input, .enquiry select, .enquiry textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.enquiry button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #101c36;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.enquiry button:hover {
+    background: #174b83;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    background: #e9fff2;
+    text-align: center;
+}
+
+.whatsapp h2 {
+    color: #146c3b;
+    margin-bottom: 15px;
+}
+
+.whatsapp p {
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* FOOTER */
+footer {
+    background: #101c36;
+    color: white;
+    padding: 30px 8%;
+    text-align: center;
+}
+
+footer p {
+    margin: 10px 0;
+    color: #cbd5e1;
+}
+
+footer a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 75px 7%;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .course-container,
+    .mode-container,
+    .features,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="logo">TECH<span>LEARN</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#modes">Training Modes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Build Your Future With <span>Technology</span></h1>
+
+        <p>
+            Join our professional training institute and learn
+            Full Stack Java and Full Stack Python through
+            expert guidance, practical projects and industry-focused training.
+        </p>
+
+        <a href="#courses" class="btn">Explore Courses</a>
+        <a href="#contact" class="btn btn-outline">Enquire Now</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="section-title">
+        <h2>About Our Institute</h2>
+        <p>Learn today, lead tomorrow.</p>
+    </div>
+
+    <div class="about-content">
+        <p>
+            Welcome to TechLearn Training Institute. We provide
+            professional software training for students, graduates
+            and working professionals.
+
+            Our main objective is to provide practical knowledge,
+            real-time project experience and technical skills
+            required to build a successful IT career.
+
+            We offer both Online and Offline training facilities
+            with flexible learning options.
+        </p>
+    </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses">
+    <div class="section-title">
+        <h2>Our Professional Courses</h2>
+        <p>Choose your career path and start learning.</p>
+    </div>
+
+    <div class="course-container">
+
+        <!-- JAVA -->
+        <div class="course-card">
+            <div class="course-icon">☕</div>
+
+            <h3>Full Stack Java Development</h3>
+
+            <p>
+                Learn Java programming and full stack web development
+                from fundamentals to advanced concepts.
+            </p>
+
+            <h4>Course Curriculum</h4>
+
+            <ul>
+                <li>Core Java and Advanced Java</li>
+                <li>Object Oriented Programming</li>
+                <li>JDBC, Servlets and JSP</li>
+                <li>Spring Framework and Spring Boot</li>
+                <li>HTML, CSS and JavaScript</li>
+                <li>React JS Basics</li>
+                <li>MySQL Database</li>
+                <li>Real-Time Projects</li>
+            </ul>
+
+            <a href="#contact" class="course-btn">
+                Enquire for Java
+            </a>
+        </div>
+
+        <!-- PYTHON -->
+        <div class="course-card">
+            <div class="course-icon">🐍</div>
+
+            <h3>Full Stack Python Development</h3>
+
+            <p>
+                Master Python programming and learn to develop
+                complete web applications using modern technologies.
+            </p>
+
+            <h4>Course Curriculum</h4>
+
+            <ul>
+                <li>Python Fundamentals</li>
+                <li>Advanced Python</li>
+                <li>Object Oriented Programming</li>
+                <li>Django and Flask</li>
+                <li>HTML, CSS and JavaScript</li>
+                <li>React JS Basics</li>
+                <li>MySQL Database</li>
+                <li>Real-Time Projects</li>
+            </ul>
+
+            <a href="#contact" class="course-btn">
+                Enquire for Python
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- TRAINING MODES -->
+<section class="modes" id="modes">
+    <div class="section-title">
+        <h2>Available Training Modes</h2>
+        <p>Learn from anywhere or attend our classroom sessions.</p>
+    </div>
+
+    <div class="mode-container">
+
+        <div class="mode-card">
+            <div class="course-icon">💻</div>
+            <h3>Online Training</h3>
+
+            <p>
+                Attend live interactive classes from your home.
+                Get learning materials, practical sessions,
+                doubt clarification and project guidance.
+            </p>
+        </div>
+
+        <div class="mode-card">
+            <div class="course-icon">🏫</div>
+            <h3>Offline Training</h3>
+
+            <p>
+                Attend classroom sessions with direct trainer
+                interaction, hands-on practice, lab facilities
+                and real-time project development.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-us">
+    <div class="section-title">
+        <h2>Why Choose Our Institute?</h2>
+        <p>We focus on practical knowledge and career development.</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="course-icon">👨‍🏫</div>
+            <h3>Expert Trainers</h3>
+            <p>Learn with guidance from experienced technical trainers.</p>
+        </div>
+
+        <div class="feature">
+            <div class="course-icon">💡</div>
+            <h3>Practical Learning</h3>
+            <p>Improve your skills with hands-on coding and projects.</p>
+        </div>
+
+        <div class="feature">
+            <div class="course-icon">🚀</div>
+            <h3>Career Guidance</h3>
+            <p>Get guidance for technical interviews and career preparation.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>Have questions? Contact us for course details and admissions.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+            <h3>Get In Touch</h3>
+
+            <p>📍 <b>Institute Name:</b> TechLearn Training Institute</p>
+
+            <p>📞 <b>Phone:</b> +91 XXXXXXXXXX</p>
+
+            <p>📧 <b>Email:</b> info@techlearn.com</p>
+
+            <p>📍 <b>Address:</b> TechLearn Training Institute.</p>
+
+            <p>🕒 <b>Working Hours:</b> Monday - Saturday</p>
+
+            <a href="https://wa.me/91XXXXXXXXXX"
+               class="whatsapp-btn">
+               Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- ENQUIRY FORM -->
+        <div class="enquiry">
+            <h3>Course Enquiry Form</h3>
+
+            <form action="mailto:info@techlearn.com"
+                  method="post" enctype="text/plain">
+
+                <input type="text"
+                       name="Student Name"
+                       placeholder="Enter Your Name"
+                       required>
+
+                <input type="tel"
+                       name="Phone Number"
+                       placeholder="Enter Phone Number"
+                       required>
+
+                <input type="email"
+                       name="Email"
+                       placeholder="Enter Email Address">
+
+                <select name="Course" required>
+                    <option value="">Select Your Course</option>
+                    <option>Full Stack Java</option>
+                    <option>Full Stack Python</option>
+                </select>
+
+                <select name="Training Mode" required>
+                    <option value="">Select Training Mode</option>
+                    <option>Online</option>
+                    <option>Offline</option>
+                </select>
+
+                <textarea name="Message"
+                          rows="4"
+                          placeholder="Your Message"></textarea>
+
+                <button type="submit">Submit Enquiry</button>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- WHATSAPP GROUP -->
+<section class="whatsapp">
+    <h2>Join Our WhatsApp Community</h2>
+
+    <p>
+        Get course updates, class schedules, announcements,
+        learning materials and important information.
+    </p>
+
+    <a href="https://chat.whatsapp.com/YOUR_GROUP_INVITE_LINK"
+       class="whatsapp-btn"
+       target="_blank">
+       Join WhatsApp Group
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h2>TECH<span style="color:#00d4ff;">LEARN</span></h2>
+
+    <p>Learn Skills. Build Careers. Achieve Success.</p>
+
+    <p>
+        © 2026 TechLearn Training Institute.
+        All Rights Reserved.
+    </p>
+
+    <p>
+        <a href="#home">Back to Top ↑</a>
+    </p>
+</footer>
+
+</body>
+</html>
